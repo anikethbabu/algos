@@ -1,20 +1,20 @@
 package com.aniketh;
 
 public class EmployeeNode {
-        private Employee employee;
+        private EmployeeStack employeeStack;
         private EmployeeNode next;
         private EmployeeNode previous;
 
-        public EmployeeNode(Employee employee) {
-            this.employee = employee;
+        public EmployeeNode(EmployeeStack employeeStack) {
+            this.employeeStack = employeeStack;
         }
 
-        public Employee getEmployee() {
-            return this.employee;
+        public EmployeeStack getEmployee() {
+            return this.employeeStack;
         }
 
-        public void setEmployee(Employee employee) {
-            this.employee = employee;
+        public void setEmployee(EmployeeStack employeeStack) {
+            this.employeeStack = employeeStack;
         }
 
         public EmployeeNode getNext() {
@@ -34,7 +34,7 @@ public class EmployeeNode {
         }
 
         public String toString() {
-            return this.employee.toString();
+            return this.employeeStack.toString();
         }
 
 }

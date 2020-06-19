@@ -5,8 +5,8 @@ public class DoublyLinkedList {
     private EmployeeNode tail;
     private int size;
 
-    public void addToFront(Employee employee) {
-        EmployeeNode node = new EmployeeNode(employee);
+    public void addToFront(EmployeeStack employeeStack) {
+        EmployeeNode node = new EmployeeNode(employeeStack);
         if (this.head == null) {
             this.tail = node;
         } else {
@@ -18,8 +18,8 @@ public class DoublyLinkedList {
         ++this.size;
     }
 
-    public void addToEnd(Employee employee) {
-        EmployeeNode node = new EmployeeNode(employee);
+    public void addToEnd(EmployeeStack employeeStack) {
+        EmployeeNode node = new EmployeeNode(employeeStack);
         if (this.tail == null) {
             this.head = node;
         } else {

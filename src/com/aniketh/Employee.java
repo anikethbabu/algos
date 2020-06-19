@@ -12,7 +12,7 @@ public class Employee {
     }
 
     public String getFirstName() {
-        return this.firstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -20,7 +20,7 @@ public class Employee {
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
@@ -28,36 +28,39 @@ public class Employee {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
+    @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        } else if (o != null && this.getClass() == o.getClass()) {
-            Employee employee = (Employee)o;
-            if (this.id != employee.id) {
-                return false;
-            } else {
-                return !this.firstName.equals(employee.firstName) ? false : this.lastName.equals(employee.lastName);
-            }
-        } else {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Employee employee = (Employee) o;
+
+        if (id != employee.id) return false;
+        if (!firstName.equals(employee.firstName)) return false;
+        return lastName.equals(employee.lastName);
     }
 
+    @Override
     public int hashCode() {
-        int result = this.firstName.hashCode();
-        result = 31 * result + this.lastName.hashCode();
-        result = 31 * result + this.id;
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + id;
         return result;
     }
 
+    @Override
     public String toString() {
-        return "Employee{firstName='" + this.firstName + '\'' + ", lastName='" + this.lastName + '\'' + ", id=" + this.id + '}';
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
